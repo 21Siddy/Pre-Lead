@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Survey App </title>
+    <script>
+        function updateOrder() {
+            var statement1 = document.getElementById("statement1").value;
+            var statement2 = document.getElementById("statement2").value;
+            var statement3 = document.getElementById("statement3").value;
+            
+            if (statement1 === statement2 || statement1 === statement3 || statement2 === statement3) {
+                alert("Please select unique order values for all statements!");
+                return;
+            }
+            document.getElementById("order_form").submit();
+        }
+    </script>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1> Sicherheit in Kritischen Infrastrukturen (KRITIS) </h1>
+    <br>
+    <p>
+        Sehr geehrte Damen und Herren,
+        <br>
+        zunehmende IT-Sicherheitsvorfälle in Kritischen Infrastrukturen und im alltäglichen Leben machen neue Konzepte
+        zum Schutz
+        Kritischer Infrastrukturen notwendig.
+        <br>
+        Kritische Infrastrukturen (KRITIS) beschreiben Einrichtungen des allgemeinen Wohls der Bevölkerung. Besonderer
+        Fokus liegt
+        auf der Energie-, Gas- und Wasserversorgung sowie der IT-Infrastruktur. Näheres dazu finden Sie unter
+        http://www.esci-vrs.de
+        /kritische-infrastrukturen/. Die Erweiterte Sicherheit von Kritischen Infrastrukturen stet im Zentrum des
+        Forschungsprojekts ESCI
+        des IHP - Leibniz-Instituts für innovative Mikroelektronik sowie der Brandenburgischen Technischen Universität
+        Cottbus.
+        <br>
+        Die kurze Befragung wird ca. 8 Minuten dauern. Ihre Angaben werden dabei vertraulich behandelt und anonym
+        ausgewertet.
+        Diese Umfrage enthält 23 Fragen
+    </p>
+    <h2> Einleitung </h2>
+    <p>
+        Die Thematik der IT-Sicherheit in Kritischen Infrastrukturen wird zunehmend relevant und unterstützt durch den
+        erweiterten
+        Einsatz eingebetteter Systeme (Embedded Systems) im Bereich der Automatisierungstechnik.
+    </p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <h3>
+            1.1 Aus welcher Branche stammen Sie?
+        </h3>
+        <p>
+            Bitte wähle nur eine der folgenden Antworten aus :
+        </p>
+        <br>
+        <input type="radio" id="Energieautomatisierung im Speziellen" name="Branche"
+            value="Energieautomatisierung im Speziellen">
+        <label for="Energieautomatisierung im Speziellen">Energieautomatisierung im Speziellen</label>
+        <br>
+        <input type="radio" id="Industrieautomatisierung im Speziellen" name="Branche"
+            value="Industrieautomatisierung im Speziellen">
+        <label for="Industrieautomatisierung im Speziellen">Industrieautomatisierung im Speziellen</label>
+        <br>
+        <input type="radio" id="EIT-Sicherheit im Speziellen" name="Branche" value="IT-Sicherheit im Speziellen">
+        <label for="EIT-Sicherheit im Speziellen">IT-Sicherheit im Speziellen</label>
+        <br>
+        <input type="radio" id="Energieversorgung" name="Branche" value="Energieversorgung">
+        <label for="Energieversorgung">Energieversorgung</label>
+        <br>
+        <input type="radio" id="Bildung und Forschung" name="Branche" value="Bildung und Forschung">
+        <label for="Bildung und Forschung">Bildung und Forschung</label>
+        <br>
+        <input type="radio" id="Finanzen und Versicherungen" name="Branche" value="Finanzen und Versicherungen">
+        <label for="Finanzen und Versicherungen">Finanzen und Versicherungen</label>
+        <br>
+        <input type="radio" id="Gesundheits- und Sozialwesen" name="Branche" value="Gesundheits- und Sozialwesen">
+        <label for="Gesundheits- und Sozialwesen">Gesundheits- und Sozialwesen</label>
+        <br>
+        <input type="radio" id="Information und Kommunikation" name="Branche" value="Information und Kommunikation">
+        <label for="Information und Kommunikation">Information und Kommunikation</label>
+        <br>
+        <input type="radio" id="Öffentliche Verwaltung, Verteidigung" name="Branche"
+            value="Öffentliche Verwaltung, Verteidigung">
+        <label for="Öffentliche Verwaltung, Verteidigung">Öffentliche Verwaltung, Verteidigung</label>
+        <br>
+        <input type="radio" id="Verkehr und Logistikn" name="Branche" value="Verkehr und Logistik">
+        <label for="Verkehr und Logistikn">Verkehr und Logistik</label>
+        <br>
+        <input type="radio" id="Wasserversorgung" name="Branche" value="Wasserversorgung">
+        <label for="Wasserversorgung">Wasserversorgung</label>
+        <br>
+        <input type="radio" id="Gasversorgung" name="Branche" value="Gasversorgung">
+        <label for="Gasversorgung">Gasversorgung</label>
+        <br>
+        <input type="radio" id="Rechenzentrum im Spezielleng" name="Branche" value="Rechenzentrum im Speziellen">
+        <label for="Rechenzentrum im Spezielleng">Rechenzentrum im Speziellen</label>
+        <br>
+        <input type="radio" id="Technische Dienstleistungen" name="Branche" value="Technische Dienstleistungen">
+        <label for="Technische Dienstleistungen">Technische Dienstleistungen</label>
+        <br>
+        <input type="radio" id="Beratende Dienstleistungen" name="Branche" value="Beratende Dienstleistungen">
+        <label for="Beratende Dienstleistungen">Beratende Dienstleistungen</label>
+        <br>
+        <input type="radio" id="Produktion und verarbeitendes Gewerbe" name="Branche"
+            value="Produktion und verarbeitendes Gewerbe">
+        <label for="Produktion und verarbeitendes Gewerbe">Produktion und verarbeitendes Gewerbe</label>
+        <br>
+        <input type="radio" id="Sonstiges" name="Branche" value="Sonstiges">
+        <label for="Sonstiges">Sonstiges</label>
+        <input type="text" id="Sonstiges" name="Branche-Text">
+        <br>
+
+        <h3>
+            1.2 Welche IT-Sicherheitslösungen und IT-Sicherheitsansätze werden Ihres
+            Wissens nach in Ihrem Unternehmen verfolgt?
+        </h3>
+        <p>
+            Bitte wähle nur eine der folgenden Antworten aus :
+        </p>
+        <br>
+        <input type="radio" id="Antivirenlösungen" name="Lösungen-und-Ansätze" value="Antivirenlösungenn">
+        <label for="Antivirenlösungen">Antivirenlösungen</label>
+        <br>
+        <input type="radio" id="Data-Leakage-Prevention-Systeme" name="Lösungen-und-Ansätze"
+            value="Data-Leakage-Prevention-Systeme">
+        <label for="Data-Leakage-Prevention-Systeme">Data-Leakage-Prevention-Systeme</label>
+        <br>
+        <input type="radio" id="Firewall-Applikationen" name="Lösungen-und-Ansätze" value="Firewall-Applikationen">
+        <label for="Firewall-Applikationen">Firewall-Applikationen</label>
+        <br>
+        <input type="radio" id="Intrusion-Detection-Systeme / Intrusion-Prevention-Systeme" name="Lösungen-und-Ansätze"
+            value="Intrusion-Detection-Systeme / Intrusion-Prevention-Systeme">
+        <label for="Intrusion-Detection-Systeme / Intrusion-Prevention-Systeme">Intrusion-Detection-Systeme /
+            Intrusion-Prevention-Systeme</label>
+        <br>
+        <input type="radio" id="Security-Information-and-Event-Management-Systeme (SIEM)" name="Lösungen-und-Ansätze"
+            value="Security-Information-and-Event-Management-Systeme (SIEM)">
+        <label
+            for="Security-Information-and-Event-Management-Systeme (SIEM)">Security-Information-and-Event-Management-Systeme
+            (SIEM)</label>
+        <br>
+        <input type="radio" id="Unified-Threat-Management-Systeme" name="Lösungen-und-Ansätze"
+            value="Unified-Threat-Management-Systeme">
+        <label for="Unified-Threat-Management-Systeme">Unified-Threat-Management-Systeme</label>
+        <br>
+        <input type="radio" id="Kein Sicherheitsansatz vorhanden" name="Lösungen-und-Ansätze"
+            value="Kein Sicherheitsansatz vorhanden">
+        <label for="Kein Sicherheitsansatz vorhanden">Kein Sicherheitsansatz vorhanden</label>
+        <br>
+        <input type="radio" id="Sonstiges" name="Lösungen-und-Ansätze" value="Sonstiges">
+        <label for="Sonstiges">Sonstiges</label>
+        <input type="text" id="Sonstiges" name="Lösungen-und-Ansätze-Text">
+        <br>
+
+
+        <h3>
+            1.3 Welche der folgenden Aussagen treffen aus Ihrer Sicht auf Ihr Unternehmen zu?
+        </h3>
+        <p>
+            Bitte wähle die zutreffende Antwort aus:
+        </p>
+        <br>
+        <fieldset>
+            <legend>Beim Einsatz von IT-Sicherheitslösungen halten wir uns ausschließlich an Standards.</legend>
+            <input type="radio" id="standards_ja" name="standards" value="ja">
+            <label for="standards_ja">Ja</label>
+            <input type="radio" id="standards_nein" name="standards" value="nein">
+            <label for="standards_nein">Nein</label>
+            <input type="radio" id="standards_unsicher" name="standards" value="unsicher">
+            <label for="standards_unsicher">Unsicher</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Handelsübliche Sicherheitslösungen bieten nicht den Schutz den wir möchten.</legend>
+            <input type="radio" id="handelsübliche_ja" name="handelsübliche-sicherheitslösungen" value="ja">
+            <label for="handelsübliche_ja">Ja</label>
+            <input type="radio" id="handelsübliche_nein" name="handelsübliche-sicherheitslösungen" value="nein">
+            <label for="handelsübliche_nein">Nein</label>
+            <input type="radio" id="handelsübliche_unsicher" name="handelsübliche-sicherheitslösungen" value="unsicher">
+            <label for="handelsübliche_unsicher">Unsicher</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>In Bezug auf IT-Sicherheit sind wir Branchenprimus.</legend>
+            <input type="radio" id="branchenprimus_ja" name="branchenprimus" value="ja">
+            <label for="branchenprimus_ja">Ja</label>
+            <input type="radio" id="branchenprimus_nein" name="branchenprimus" value="nein">
+            <label for="branchenprimus_nein">Nein</label>
+            <input type="radio" id="branchenprimus_unsicher" name="branchenprimus" value="unsicher">
+            <label for="branchenprimus_unsicher">Unsicher</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>IT-Sicherheit wird durch einen Dienstleister übernommen.</legend>
+            <input type="radio" id="dienstleister_ja" name="dienstleister" value="ja">
+            <label for="dienstleister_ja">Ja</label>
+            <input type="radio" id="dienstleister_nein" name="dienstleister" value="nein">
+            <label for="dienstleister_nein">Nein</label>
+            <input type="radio" id="dienstleister_unsicher" name="dienstleister" value="unsicher">
+            <label for="dienstleister_unsicher">Unsicher</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Wir entwickeln IT-Sicherheitslösungen selbst!.</legend>
+            <input type="radio" id="selbst-entwickeln_ja" name="selbst-entwickeln" value="ja">
+            <label for="selbst-entwickeln_ja">Ja</label>
+            <input type="radio" id="selbst-entwickeln_nein" name="selbst-entwickeln" value="nein">
+            <label for="selbst-entwickeln_nein">Nein</label>
+            <input type="radio" id="selbst-entwickeln_unsicher" name="selbst-entwickeln" value="unsicher">
+            <label for="selbst-entwickeln_unsicher">Unsicher</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Wir nutzen bereits IPv6..</legend>
+            <input type="radio" id="ipv6_ja" name="ipv6" value="ja">
+            <label for="ipv6_ja">Ja</label>
+            <input type="radio" id="ipv6_nein" name="ipv6" value="nein">
+            <label for="ipv6_nein">Nein</label>
+            <input type="radio" id="ipv6_unsicher" name="ipv6" value="unsicher">
+            <label for="ipv6_unsicher">Unsicher</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Wir setzen bewusst einen White-Hack-Ansatz ein.</legend>
+            <input type="radio" id="white-hack-ansatz_ja" name="white-hack-ansatz" value="ja">
+            <label for="white-hack-ansatz_ja">Ja</label>
+            <input type="radio" id="white-hack-ansatz_nein" name="white-hack-ansatz" value="nein">
+            <label for="white-hack-ansatz_nein">Nein</label>
+            <input type="radio" id="white-hack-ansatz_unsicher" name="white-hack-ansatz" value="unsicher">
+            <label for="white-hack-ansatz_unsicher">Unsicher</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Wir testen neue IT-Sicherheitsprodukte und Lösungsansätze.</legend>
+            <input type="radio" id="testen_ja" name="testen" value="ja">
+            <label for="testen_ja">Ja</label>
+            <input type="radio" id="testen_nein" name="testen" value="nein">
+            <label for="testen_nein">Nein</label>
+            <input type="radio" id="testen_unsicher" name="testen" value="unsicher">
+            <label for="testen_unsicher">Unsicher</label>
+        </fieldset>
+        <br>
+
+        <h3>
+            1.4 Seit wievielen Jahren setzen Sie sich mit dem Thema IT-Sicherheit auseinander? 
+        </h3>
+        <p>
+            Bitte gebe hier Deine Antwort ein:
+        </p>
+        <label for="it-sicherheit-jahre">Antwort</label>
+        <input type="number" name="it-sicherheit-jahre" id="it-sicherheit-jahre">
+
+        <h3>
+            1.5 In meinem Unternehmen werde ich als Experte für IT-Sicherheit gesehen.
+        </h3>
+        <p>
+            Bitte wähle nur eine der folgenden Antworten aus.
+        </p>
+        
+        <input type="radio" name="it-sicherheit-expert" id="it-sicherheit-expert-ja" value="ja">
+        <label for="it-sicherheit-expert-ja"> Ja </label>
+        <br>
+        <input type="radio" name="it-sicherheit-expert" id="it-sicherheit-expert-nein" value="nein">
+        <label for="it-sicherheit-expert-nein"> Nein </label>
+
+        <h3>
+            1.6 Entwickelt oder vertreibt Ihr Unternehmen Lösungen zur IT-Sicherheit? 
+        </h3>
+        <p>
+            Bitte wähle alle Punkte aus, die zutreffen:
+        </p>
+        <input type="checkbox" id="Eigene Entwicklung" name="lösungen-zur-it-options" value="Eigene Entwicklung">
+        <label for="Eigene Entwicklung">Eigene Entwicklung</label>
+        <br>
+        <input type="checkbox" id="Eigener Vertrieb" name="lösungen-zur-it-options" value="Eigener Vertrieb">
+        <label for="Eigener Vertrieb">Eigener Vertrieb</label>            
+        <br>
+        <input type="checkbox" id="Weder noch" name="lösungen-zur-it-options" value="Weder noch">
+        <label for="Weder noch">Weder noch</label>
+        <br>
+
+        <h3>
+            1.6 (b) Wirken Sie bei der Entwicklung von Sicherheitslösungen mit?
+        </h3>
+        <p>
+            Bitte wähle nur eine der folgenden Antworten aus.
+        </p>
+        
+        <input type="radio" name="it-sicherheit-mitwirken" id="it-sicherheit-mitwirken-ja" value="ja">
+        <label for="it-sicherheit-mitwirken-ja"> Ja </label>
+        <br>
+        <input type="radio" name="it-sicherheit-mitwirken" id="it-sicherheit-mitwirken-nein" value="nein">
+        <label for="it-sicherheit-mitwirken-nein"> Nein </label>
+
+        <h3>
+            1.7 Zu welchem Grad lässt sic Ihr aktuelles Tätigkeitsfeld folgenden Bereichen zurechnen ?
+        </h3>
+        <p>
+            Bitte gebe hier Deine Antwort(ein) ein:
+        </p>
+        <label for="Sicherheitslösungen-für-Smartphone">Sicherheitslösungen für Smartphones</label>
+        <input type="text" name="sicherheit-smartphone" id="Sicherheitslösungen-für-Smartphone">
+        <br>
+        <br>
+        <label for="RFID-Security-Komponenten">RFID-Security-Komponenten</label>
+        <input type="text" name="rfid-security-komponenten" id="RFID-Security-Komponenten">
+        <br>
+        <br>
+        <label for="Sicherheit-in-der-Energietechnik">Sicherheit-in-der-Energietechnik</label>
+        <input type="text" name="sicherheit-energietechnik" id="Sicherheit-in-der-Energietechnik">
+        <br>
+        <br>
+        <label for="Sicherheit-in-der-Automatisierungstechnik">Sicherheit in der Automatisierungstechnik</label>
+        <input type="text" name="sicherheit-automatisierungstechnik" id="Sicherheit-in-der-Automatisierungstechnik">
+        <br>
+        <br>
+        <label for="Schutz-von-Rechenzentren">Schutz von Rechenzentren</label>
+        <input type="text" name="schutz-von-rechenzentren" id="Schutz-von-Rechenzentren">
+        <br>
+        <br>
+        <label for="Aufrecherhaltung-der-Netzwerksicherheit">Aufrecherhaltung der Netzwerksicherheit</label>
+        <input type="text" name="aufrecherhaltung-netzwerksicherheit" id="Aufrecherhaltung-der-Netzwerksicherheit">
+        <br>
+        <br>
+        <label for="Suchtz-von-Sensorsystemen">Suchtz von Sensorsystemen</label>
+        <input type="text" name="schutz-von-sensorsystemen" id="Suchtz-von-Sensorsystemen">
+        <p>
+            Sie sehen ausgewählte Bereiche der IT-Sicherheitsbranche. Wie stark bzw. schwach ist Ihr Engagement in folgende
+            Bereiche einteilbar? Ein Wert von -100 gibt an, dass keine Analogien vorhanden sind. Ein Wert von +100 enthüllt starke
+            Parallelen.
+        </p>
+
+        <h2>
+            Forschungsschwerpunkte
+        </h2>
+        <h3>
+            2.1 Wo sollen Ihrer Erfahrung nach Schwerpunkte bei der Forschung zur Sicherheit in Kritischen Infrastrukturen gesetzt werden ? <br>
+            Zum Start der Forschung in diesem Bereich gibt es drei verfolgbare Ansätze.
+        </h3>
+        <label for="ansättze-reihenfolge">
+            Bitte nummeriere jede Box in der Reihenfolge Deiner Präferenz, beginnend von 1 bis 3
+        </label>
+        <ul id="sortable">
+            <li>
+                <label for="Angrife-Rank">Konzentration auf die Abwehr spezieller Angriffe</label>
+                <select id="Angrife-Rank" name="Angrife-Rank">
+                    <option value="1">Most Relatable (1)</option>
+                    <option value="2">Relatable (2)</option>
+                    <option value="3">Least Relatable (3)</option>
+                </select>
+            </li>
+            <li>
+                <label for="Protokolle-Rank">Konzentration auf den Schutz einzelner Protokolle</label>
+                <select id="Protokolle-Rank" name="Protokolle-Rank">
+                    <option value="1">Most Relatable (1)</option>
+                    <option value="2">Relatable (2)</option>
+                    <option value="3">Least Relatable (3)</option>
+                </select>
+            </li>
+            <li>
+                <label for="Schutzzieles-Rank">Konzentration auf die Sicherstellung eines Schutzzieles</label>
+                <select id="Schutzzieles-Rank" name="Schutzzieles-Rank">
+                    <option value="1">Most Relatable (1)</option>
+                    <option value="2">Moderately Relatable (2)</option>
+                    <option value="3">Least Relatable (3)</option>
+                </select>
+            </li>
+        </ul>
+        
+        <button type="button" onclick="updateOrder()">Confirm</button>
+        
+        <p>
+            1) Der erste Ansatz beschreibt die Abwehr einzelner Angriffe. Hier konzentriert sich die Forschung auf den Schutz vor
+            einem Angriff. <br>
+            2) Der zweite Ansatz stellt die Sicherung einzelner Protokolle dar. Hier konzentriert sich die Forschung auf den Rundum-
+            Schutz eines speziellen Protokolls. <br>
+            3) Der dritte Ansatz verfolgt die Gewährleistung einzelner Schutzziele. Hier konzentriert sich die Forschung auf die
+            Sicherstellung eines Schutzzieles in allen Lagen. <br>
+        </p>
+
+        <h3>
+            2.2 Gegeben sind bekannte Angriffmethoden. Bitte bewerten Sie Ihrer <br>
+            Erfahrung nach die Relevanz einzelner Angriffsmethoden. Vergeben Sie dazu <br>
+            bitte die Wichtigkeit in Punkten, je höher desto wichtiger. <br>
+        </h3>
+        <ul>
+            <li>
+                <label for="Jamming">Absichtliche Störung der drahtlosen Kommunikation - z.B. Jamming</label>
+                <input type="number" min="1" max="10" id="Jamming" name="jamming-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="ARP-Spoofing">Absichtliche Manipulation der Identität einzelner Komponenten - z.B. ARP-Spoofing</label>
+                <input type="number" min="1" max="10" id="ARP-Spoofing" name="arp-spoofing-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="Man-in-the-middle">Absichtliche Manipulation der Kommunikation - z.B. Man-in-the-middle</label>
+                <input type="number" min="1" max="10" id="Man-in-the-middle" name="man-in-the-middle-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="Replay">Absichtliche Wiedereinspielung von alten Datenpaketen - z.B. Replay</label>
+                <input type="number" min="1" max="10" id="Replay" name="replay-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="Buffer-overflow">Gezielte Ausnutzung von Programmierfehlern - z.B. Buffer-overflow</label>
+                <input type="number" min="1" max="10" id="Buffer-overflow" name="buffer-overflow-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="DoS">Gezielte Überlastung einzelner Systemkomponenten - z.B. DoS</label>
+                <input type="number" min="1" max="10" id="DoS" name="dos-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="RPC">Unauthorisierter Aufruf von Prozessen - z.B. RPC</label>
+                <input type="number" min="1" max="10" id="RPC" name="rpc-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="Eavesdroping">Unauthorisierte Aufzeichnung des Netzwerkverkehrs - z.B. Eavesdroping</label>
+                <input type="number" min="1" max="10" id="Eavesdroping" name="eavesdroping-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="Code-Injection">Unauthorisiertes Einbringen von Schadkomponenten - z.B. Code-Injection</label>
+                <input type="number" min="1" max="10" id="Code-Injection" name="code-injection-wichtigkeit-wert">
+            </li>
+        </ul>
+
+
+        <h3>
+            2.3 Gegeben sind gegenwärtig und zukünftig relevante Protokolle aus dem Bereich <br>
+            der Industrie- und Energieautomatisierung. Bitte bewerten Sie nach Ihrer <br>
+            Erfahrung die Relevanz einzelner Protokolle Vergeben Sie dazu bitte die Wichtigkeit <br>
+            in Punkten, je höher desto wichtiger.
+        </h3>
+        <ul>
+            <li>
+                <label for="6LowPAN-Protokoll">6LowPAN-Protokoll</label>
+                <input type="number" min="1" max="10" id="6LowPAN-Protokoll" name="6lowpan-protokoll-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="HART-Protokoll">HART-Protokoll</label>
+                <input type="number" min="1" max="10" id="HART-Protokoll" name="hart-protokoll-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="IC60870-104-Protokoll">IC60870-104-Protokoll</label>
+                <input type="number" min="1" max="10" id="IC60870-104-Protokoll" name="ic60870-104-protokoll-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="IO-Link-Protokoll">IO-Link-Protokoll</label>
+                <input type="number" min="1" max="10" id="IO-Link-Protokoll" name="io-link-protokoll-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="Modbus-Protokoll">Modbus-Protokoll</label>
+                <input type="number" min="1" max="10" id="Modbus-Protokoll" name="modbus-protokoll-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="Profibus-Protokoll">Profibus-Protokoll</label>
+                <input type="number" min="1" max="10" id="Profibus-Protokoll" name="profibus-protokoll-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="Profinet-Protokoll">Profinet-Protokoll</label>
+                <input type="number" min="1" max="10" id="Profinet-Protokoll" name="profinet-protokoll-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="Wireless HART-Protokoll">Wireless HART-Protokoll</label>
+                <input type="number" min="1" max="10" id="Wireless HART-Protokoll" name="wireless hart-protokoll-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="WISA-Protokoll">WISA-Protokoll</label>
+                <input type="number" min="1" max="10" id="WISA-Protokoll" name="wisa-protokoll-wichtigkeit-wert">
+            </li>
+        </ul>
+
+
+        <h3>
+            2.4 Gegeben sind standardisierte Schutzziele aus der IT-Sicherheit. Bitte bewerten <br>
+            Sie erfahrungsgemäß die Relevanz einzelner Schutzziele im Schadensfall. <br>
+            Vergeben Sie dazu bitte die Wichtigkeit in Punkten, je höher desto wichtiger <br>
+        </h3>
+        <ul>
+            <li>
+                <label for="Informationsvertraulichkeit">Informationsvertraulichkeit</label>
+                <input type="number" min="1" max="10" id="Informationsvertraulichkeit" name="informationsvertraulichkeit-protokoll-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="Authentizität">Authentizität</label>
+                <input type="number" min="1" max="10" id="Authentizität" name="authentizität-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="Datenintegrität">Datenintegrität</label>
+                <input type="number" min="1" max="10" id="Datenintegrität" name="datenintegrität-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="Verfügbarkeit">Verfügbarkeit</label>
+                <input type="number" min="1" max="10" id="Verfügbarkeit" name="verfügbarkeit-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="Verbindlichkeit">Verbindlichkeit</label>
+                <input type="number" min="1" max="10" id="Verbindlichkeit" name="verbindlichkeit-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="Anonymisierung">Anonymisierung</label>
+                <input type="number" min="1" max="10" id="Anonymisierung" name="anonymisierung-wichtigkeit-wert">
+            </li>
+            <li>
+                <label for="Pseudomisierung">Pseudomisierung</label>
+                <input type="number" min="1" max="10" id="Pseudomisierung" name="pseudomisierung-wichtigkeit-wert">
+            </li>
+        </ul>
+        <ol>
+            <li>
+                <u> <b>Authentizität </b> </u>  beschreibt die Echtheit und Glaubwürdigkeit eines Objekts (der Information) und gewährleistet so die
+                <br> außschließliche Kommuniktation mit zugelassenen Systemkomponenten.
+            </li>
+            <br>    
+            <li>
+                <u> <b>Datenintegrität </b> </u> beschreibt den Schutz vor unautorisierter und unbemerkter Datenänderung und gewährleistet so z.B.
+                <br> Aufrechterhaltung der Produktion.
+            </li>
+            <br>    
+            <li>
+                <u> <b> Vertraulichkeit </b> </u> beschreibt Verfahren zum Schutz vor unautorisierter Informationserlangung und gewährleistet so einen
+                 <br> Schutz vor Wissensabfluss.
+            </li>
+            <br>  
+            <li>
+                <u> <b> Verfügbarkeit </b> </u> sichert die Aufrechterhaltung der normalen Funktionalität und gewährleistet so die Verfügbarkeit der
+                <br> Anlage.
+            </li>
+            <br>
+            <li>
+                <u> <b> Verbindlichkeit </b> </u> beschreibt die Zuordenbarkeit einzelner Aktionen zu Subjekten und Objekten im System und
+                <br> gewährleistet so eine Rückverfolgbarkeit des Systemablaufs.
+            </li>
+            <br>
+            <li>
+                <u> <b> Anonymisierung und Pseudomisierung </b> </u> beschreibt die Veränderung personenbezogener Daten zum Schutz einer
+                <br> eineindeutigen Zuordnung zu natürlichen Personen ohne vorherige Sachkenntnis und gewährleistet so eine
+                <br> Unzurechenbarkeit zu natürlichen Personen
+            </li>
+        </ol>
+        
+        <h3>
+            2.5 Auf welche konkreten Problemstellungen der IT-Sicherheit sind Sie bei
+            <br> bei Ihnen selbst oder bei Kunden gestossen?
+        </h3>
+        <label for="problems-itsicherheit">Bitte gebe hier Deine Antwort ein</label> <br>
+        <textarea name="problems-itsicherheit" id="problems-itsicherheit" cols="90" rows="20"></textarea>
+        <br>
+        <p>
+            Fehlender Einatz von Sicherheitsmechanismen, eine fehlende Sensibilisierung oder das Arbeiten mit alten <br>
+            Protokollversionen und alter Software sind für die IT-Sicherheit ebenso problematisch wie eine zu umständliche <br>
+            Administration oder eine zu starke Häufung von False-Positive-Alarmierungen sowie mangelhafter Support der Hersteller. <br>
+            Auf welche Problemstellungen sind Sie bereits gestossen? <br>
+        </p>
+
+        <h3>
+            2.6 Wurden aus Ihrer Sicht relevante Angriffsmethoden oder Protokolle vergessen? Wenn ja, welche?
+        </h3>
+        <label for="relevante-angriffsmethode">Bitte gebe hier Deine Antwort ein</label> <br>
+        <textarea name="relevante-angriffsmethode" id="relevante-angriffsmethode" cols="50" rows=10"></textarea>
+        <p>
+            Ein Fragebogen kann nur einen Auszug der Realität wiedergeben und so können nicht alle bekannten Angriffe und <br>
+            Protokolle genannt werden. Welche praxisrelevanten wurden nicht genannt? <br>
+        </p>
+        
+        <h2>
+            Systemumgebung und Systemverhalten
+        </h2>
+        <h3>
+            3.1 Bewerten Sie die folgenden Merkmalsausprägungen bitte hinsichtlich ihrer <br>
+            Wichtigkeit zur Entwicklung eines zukünftigen Sicherheitssystems für Kritische <br>
+            Infrastrukturen, insbesondere der Energieautomatisierung <br>
+        </h3>
+        
+        <label for="anomalieerkennung-zur-ereignis-analyse-wichtigkeit-wert"><h4>Anomalieerkennung zur Ereignis-Analyse</h4></label>
+        <fieldset>
+            <input type="radio" id="sehr_wunschenswert" name="anomalieerkennung-zur-ereignis-analyse-wichtigkeit-wert" value="sehr_wunschenswert">
+            <label for="sehr_wunschenswert">Sehr wünschenswert</label>
+        
+            <input type="radio" id="wunschenswert" name="anomalieerkennung-zur-ereignis-analyse-wichtigkeit-wert" value="wunschenswert">
+            <label for="wunschenswert">Wünschenswert</label>
+        
+            <input type="radio" id="nicht_wunschenswert" name="anomalieerkennung-zur-ereignis-analyse-wichtigkeit-wert" value="nicht_wunschenswert">
+            <label for="nicht_wunschenswert">Nicht wünschenswert</label>
+        
+            <input type="radio" id="uberhaupt_nicht_wunschenswert" name="anomalieerkennung-zur-ereignis-analyse-wichtigkeit-wert" value="uberhaupt_nicht_wunschenswert">
+            <label for="uberhaupt_nicht_wunschenswert">Überhaupt nicht wünschenswert</label>
+        
+            <input type="radio" id="keine_antwort" name="anomalieerkennung-zur-ereignis-analyse-wichtigkeit-wert" value="keine_antwort">
+            <label for="keine_antwort">Keine Antwort</label>     
+        </fieldset>
+        <label for="authentifizierung-einzelner-komponenten-wichtigkeit-wert"><h4>Authentifizierung einzelner Komponenten</h4></label>
+        <fieldset>
+            <input type="radio" id="sehr_wunschenswert" name="authentifizierung-einzelner-komponenten-wichtigkeit-wert" value="sehr_wunschenswert">
+            <label for="sehr_wunschenswert">Sehr wünschenswert</label>
+        
+            <input type="radio" id="wunschenswert" name="authentifizierung-einzelner-komponenten-wichtigkeit-wert" value="wunschenswert">
+            <label for="wunschenswert">Wünschenswert</label>
+        
+            <input type="radio" id="nicht_wunschenswert" name="authentifizierung-einzelner-komponenten-wichtigkeit-wert" value="nicht_wunschenswert">
+            <label for="nicht_wunschenswert">Nicht wünschenswert</label>
+        
+            <input type="radio" id="uberhaupt_nicht_wunschenswert" name="authentifizierung-einzelner-komponenten-wichtigkeit-wert" value="uberhaupt_nicht_wunschenswert">
+            <label for="uberhaupt_nicht_wunschenswert">Überhaupt nicht wünschenswert</label>
+        
+            <input type="radio" id="keine_antwort" name="authentifizierung-einzelner-komponenten-wichtigkeit-wert" value="keine_antwort">
+            <label for="keine_antwort">Keine Antwort</label>     
+        </fieldset>
+        <label for="berücksichtigung-drahtloser-kommunikation-wichtigkeit-wert"><h4>Berücksichtigung drahtloser Kommunikation</h4></label>
+        <fieldset>
+            <input type="radio" id="sehr_wunschenswert" name="berücksichtigung-drahtloser-kommunikation-wichtigkeit-wert" value="sehr_wunschenswert">
+            <label for="sehr_wunschenswert">Sehr wünschenswert</label>
+        
+            <input type="radio" id="wunschenswert" name="berücksichtigung-drahtloser-kommunikation-wichtigkeit-wert" value="wunschenswert">
+            <label for="wunschenswert">Wünschenswert</label>
+        
+            <input type="radio" id="nicht_wunschenswert" name="berücksichtigung-drahtloser-kommunikation-wichtigkeit-wert" value="nicht_wunschenswert">
+            <label for="nicht_wunschenswert">Nicht wünschenswert</label>
+        
+            <input type="radio" id="uberhaupt_nicht_wunschenswert" name="berücksichtigung-drahtloser-kommunikation-analyse-wichtigkeit-wert" value="uberhaupt_nicht_wunschenswert">
+            <label for="uberhaupt_nicht_wunschenswert">Überhaupt nicht wünschenswert</label>
+        
+            <input type="radio" id="keine_antwort" name="berücksichtigung-drahtloser-kommunikation-wichtigkeit-wert" value="keine_antwort">
+            <label for="keine_antwort">Keine Antwort</label>     
+        </fieldset>
+        <label for="deep-paket-inspection-zur-protokoll-analyse-wichtigkeit-wert"><h4>Deep-Paket-Inspection zur Protokoll-Analyse</h4></label>
+        <fieldset>
+            <input type="radio" id="sehr_wunschenswert" name="deep-paket-inspection-zur-protokoll-analyse-wichtigkeit-wert" value="sehr_wunschenswert">
+            <label for="sehr_wunschenswert">Sehr wünschenswert</label>
+        
+            <input type="radio" id="wunschenswert" name="deep-paket-inspection-zur-protokoll-analyse-wichtigkeit-wert" value="wunschenswert">
+            <label for="wunschenswert">Wünschenswert</label>
+        
+            <input type="radio" id="nicht_wunschenswert" name="deep-paket-inspection-zur-protokoll-analyse-wichtigkeit-wert" value="nicht_wunschenswert">
+            <label for="nicht_wunschenswert">Nicht wünschenswert</label>
+        
+            <input type="radio" id="uberhaupt_nicht_wunschenswert" name="deep-paket-inspection-zur-protokoll-analyse-wichtigkeit-wert" value="uberhaupt_nicht_wunschenswert">
+            <label for="uberhaupt_nicht_wunschenswert">Überhaupt nicht wünschenswert</label>
+        
+            <input type="radio" id="keine_antwort" name="deep-paket-inspection-zur-protokoll-analyse-wichtigkeit-wert" value="keine_antwort">
+            <label for="keine_antwort">Keine Antwort</label>     
+        </fieldset>
+        <label for="dezentrales-logging-des-systemverhaltens-wichtigkeit-wert"><h4>Dezentrales Logging des Systemverhaltens</h4></label>
+        <fieldset>
+            <input type="radio" id="sehr_wunschenswert" name="dezentrales-logging-des-systemverhaltens-wichtigkeit-wert" value="sehr_wunschenswert">
+            <label for="sehr_wunschenswert">Sehr wünschenswert</label>
+        
+            <input type="radio" id="wunschenswert" name="dezentrales-logging-des-systemverhaltens-wichtigkeit-wert" value="wunschenswert">
+            <label for="wunschenswert">Wünschenswert</label>
+        
+            <input type="radio" id="nicht_wunschenswert" name="dezentrales-logging-des-systemverhaltens-wichtigkeit-wert" value="nicht_wunschenswert">
+            <label for="nicht_wunschenswert">Nicht wünschenswert</label>
+        
+            <input type="radio" id="uberhaupt_nicht_wunschenswert" name="dezentrales-logging-des-systemverhaltens-wichtigkeit-wert" value="uberhaupt_nicht_wunschenswert">
+            <label for="uberhaupt_nicht_wunschenswert">Überhaupt nicht wünschenswert</label>
+        
+            <input type="radio" id="keine_antwort" name="dezentrales-logging-des-systemverhaltens-wichtigkeit-wert" value="keine_antwort">
+            <label for="keine_antwort">Keine Antwort</label>     
+        </fieldset>
+        <label for="dezentrale-protokollierung-von-ereignissen-wichtigkeit-wert"><h4>Dezentrale Protokollierung von Ereignissen</h4></label>
+        <fieldset>
+            <input type="radio" id="sehr_wunschenswert" name="dezentrale-protokollierung-von-ereignissen-wichtigkeit-wert" value="sehr_wunschenswert">
+            <label for="sehr_wunschenswert">Sehr wünschenswert</label>
+        
+            <input type="radio" id="wunschenswert" name="dezentrale-protokollierung-von-ereignissen-wichtigkeit-wert" value="wunschenswert">
+            <label for="wunschenswert">Wünschenswert</label>
+        
+            <input type="radio" id="nicht_wunschenswert" name="dezentrale-protokollierung-von-ereignissen-wichtigkeit-wert" value="nicht_wunschenswert">
+            <label for="nicht_wunschenswert">Nicht wünschenswert</label>
+        
+            <input type="radio" id="uberhaupt_nicht_wunschenswert" name="dezentrale-protokollierung-von-ereignissen-wichtigkeit-wert" value="uberhaupt_nicht_wunschenswert">
+            <label for="uberhaupt_nicht_wunschenswert">Überhaupt nicht wünschenswert</label>
+        
+            <input type="radio" id="keine_antwort" name="dezentrale-protokollierung-von-ereignissen-wichtigkeit-wert" value="keine_antwort">
+            <label for="keine_antwort">Keine Antwort</label>     
+        </fieldset>
+        <label for="individueller-topologieentwurf-mittels-automationml-wichtigkeit-wert"><h4>Individueller Topologieentwurf mittels AutomationML</h4></label>
+        <fieldset>
+            <input type="radio" id="sehr_wunschenswert" name="individueller-topologieentwurf-mittels-automationml-wichtigkeit-wert" value="sehr_wunschenswert">
+            <label for="sehr_wunschenswert">Sehr wünschenswert</label>
+        
+            <input type="radio" id="wunschenswert" name="individueller-topologieentwurf-mittels-automationml-wichtigkeit-wert" value="wunschenswert">
+            <label for="wunschenswert">Wünschenswert</label>
+
+            <input type="radio" id="nicht_wunschenswert" name="individueller-topologieentwurf-mittels-automationml-wichtigkeit-wert" value="nicht_wunschenswert">
+            <label for="nicht_wunschenswert">Nicht wünschenswert</label>
+            
+            <input type="radio" id="uberhaupt_nicht_wunschenswert" name="individueller-topologieentwurf-mittels-automationml-wichtigkeit-wert" value="uberhaupt_nicht_wunschenswert">
+            <label for="uberhaupt_nicht_wunschenswert">Überhaupt nicht wünschenswert</label>
+            
+            <input type="radio" id="keine_antwort" name="individueller-topologieentwurf-mittels-automationml-wichtigkeit-wert" value="keine_antwort">
+            <label for="keine_antwort">Keine Antwort</label>     
+        </fieldset>
+        <label for="mechanismen-zum-selbstschutzes-des-sicherheitssystems-wichtigkeit-wert"><h4>Mechanismen zum Selbstschutzes des Sicherheitssystems</h4></label>
+        <fieldset>
+            <input type="radio" id="sehr_wunschenswert" name="mechanismen-zum-selbstschutzes-des-sicherheitssystems-wichtigkeit-wert" value="sehr_wunschenswert">
+            <label for="sehr_wunschenswert">Sehr wünschenswert</label>
+        
+            <input type="radio" id="wunschenswert" name="mechanismen-zum-selbstschutzes-des-sicherheitssystems-wichtigkeit-wert" value="wunschenswert">
+            <label for="wunschenswert">Wünschenswert</label>
+        
+            <input type="radio" id="nicht_wunschenswert" name="mechanismen-zum-selbstschutzes-des-sicherheitssystems-wichtigkeit-wert" value="nicht_wunschenswert">
+            <label for="nicht_wunschenswert">Nicht wünschenswert</label>
+    
+            <input type="radio" id="uberhaupt_nicht_wunschenswert" name="mechanismen-zum-selbstschutzes-des-sicherheitssystems-wichtigkeit-wert" value="uberhaupt_nicht_wunschenswert">
+            <label for="uberhaupt_nicht_wunschenswert">Überhaupt nicht wünschenswert</label>
+        
+            <input type="radio" id="keine_antwort" name="mechanismen-zum-selbstschutzes-des-sicherheitssystems-wichtigkeit-wert" value="keine_antwort">
+            <label for="keine_antwort">Keine Antwort</label>     
+        </fieldset>
+        <label for="nutzung-einer-dezentralen-protokoll-analyse-wichtigkeit-wert"><h4>Nutzung einer dezentralen Protokoll-Analyse</h4></label>
+        <fieldset>
+            <input type="radio" id="sehr_wunschenswert" name="nutzung-einer-dezentralen-protokoll-analyse-wichtigkeit-wert" value="sehr_wunschenswert">
+            <label for="sehr_wunschenswert">Sehr wünschenswert</label>
+        
+            <input type="radio" id="wunschenswert" name="nutzung-einer-dezentralen-protokoll-analyse-wichtigkeit-wert" value="wunschenswert">
+            <label for="wunschenswert">Wünschenswert</label>
+        
+            <input type="radio" id="nicht_wunschenswert" name="nutzung-einer-dezentralen-protokoll-analyse-wichtigkeit-wert" value="nicht_wunschenswert">
+            <label for="nicht_wunschenswert">Nicht wünschenswert</label>    
+        
+            <input type="radio" id="uberhaupt_nicht_wunschenswert" name="nutzung-einer-dezentralen-protokoll-analyse-wichtigkeit-wert" value="uberhaupt_nicht_wunschenswert">
+            <label for="uberhaupt_nicht_wunschenswert">Überhaupt nicht wünschenswert</label>
+        
+            <input type="radio" id="keine_antwort" name="nutzung-einer-dezentralen-protokoll-analyse-wichtigkeit-wert" value="keine_antwort">
+            <label for="keine_antwort">Keine Antwort</label>     
+        </fieldset>
+        <label for="nutzung-eines-expertensystems-zur-protokoll-analyse-wichtigkeit-wert"><h4>Nutzung eines Expertensystems zur Protokoll-Analyse</h4></label>
+        <fieldset>
+            <input type="radio" id="sehr_wunschenswert" name="nutzung-eines-expertensystems-zur-protokoll-analyse-wichtigkeit-wert" value="sehr_wunschenswert">
+            <label for="sehr_wunschenswert">Sehr wünschenswert</label>
+        
+            <input type="radio" id="wunschenswert" name="nutzung-eines-expertensystems-zur-protokoll-analyse-wichtigkeit-wert" value="wunschenswert">
+            <label for="wunschenswert">Wünschenswert</label>
+        
+            <input type="radio" id="nicht_wunschenswert" name="nutzung-eines-expertensystems-zur-protokoll-analyse-wichtigkeit-wert" value="nicht_wunschenswert">
+            <label for="nicht_wunschenswert">Nicht wünschenswert</label>
+        
+            <input type="radio" id="uberhaupt_nicht_wunschenswert" name="nutzung-eines-expertensystems-zur-protokoll-analyse-wichtigkeit-wert" value="uberhaupt_nicht_wunschenswert">
+            <label for="uberhaupt_nicht_wunschenswert">Überhaupt nicht wünschenswert</label>
+        
+            <input type="radio" id="keine_antwort" name="nutzung-eines-expertensystems-zur-protokoll-analyse-wichtigkeit-wert" value="keine_antwort">
+            <label for="keine_antwort">Keine Antwort</label>     
+        </fieldset>
+        <label for="nutzung-von-ossim-als-basis-zur-definition-von-analyseregeln-wichtigkeit-wert"><h4>Nutzung von OSSIM als Basis zur Definition von Analyseregeln</h4></label>
+        <fieldset>
+            <input type="radio" id="sehr_wunschenswert" name="nutzung-von-ossim-als-basis-zur-definition-von-analyseregeln-wichtigkeit-wert" value="sehr_wunschenswert">
+            <label for="sehr_wunschenswert">Sehr wünschenswert</label>
+        
+            <input type="radio" id="wunschenswert" name="nutzung-von-ossim-als-basis-zur-definition-von-analyseregeln-wichtigkeit-wert" value="wunschenswert">
+            <label for="wunschenswert">Wünschenswert</label>
+        
+            <input type="radio" id="nicht_wunschenswert" name="nutzung-von-ossim-als-basis-zur-definition-von-analyseregeln-wichtigkeit-wert" value="nicht_wunschenswert">
+            <label for="nicht_wunschenswert">Nicht wünschenswert</label>
+        
+            <input type="radio" id="uberhaupt_nicht_wunschenswert" name="nutzung-von-ossim-als-basis-zur-definition-von-analyseregeln-wichtigkeit-wert" value="uberhaupt_nicht_wunschenswert">
+            <label for="uberhaupt_nicht_wunschenswert">Überhaupt nicht wünschenswert</label>
+        
+            <input type="radio" id="keine_antwort" name="nutzung-von-ossim-als-basis-zur-definition-von-analyseregeln-wichtigkeit-wert" value="keine_antwort">
+            <label for="keine_antwort">Keine Antwort</label>     
+        </fieldset>
+        <label for="unterstützung-unix-artiger-betriebssysteme-wichtigkeit-wert"> <h4>Unterstützung Unix-artiger Betriebssysteme</h4></label>
+        <fieldset>
+            <input type="radio" id="sehr_wunschenswert" name="unterstützung-unix-artiger-betriebssysteme-wichtigkeit-wert" value="sehr_wunschenswert">
+            <label for="sehr_wunschenswert">Sehr wünschenswert</label>
+        
+            <input type="radio" id="wunschenswert" name="unterstützung-unix-artiger-betriebssysteme-wichtigkeit-wert" value="wunschenswert">
+            <label for="wunschenswert">Wünschenswert</label>
+        
+            <input type="radio" id="nicht_wunschenswert" name="unterstützung-unix-artiger-betriebssysteme-wichtigkeit-wert" value="nicht_wunschenswert">
+            <label for="nicht_wunschenswert">Nicht wünschenswert</label>
+        
+            <input type="radio" id="uberhaupt_nicht_wunschenswert" name="unterstützung-unix-artiger-betriebssysteme-wichtigkeit-wert" value="uberhaupt_nicht_wunschenswert">
+            <label for="uberhaupt_nicht_wunschenswert">Überhaupt nicht wünschenswert</label>
+        
+            <input type="radio" id="keine_antwort" name="unterstützung-unix-artiger-betriebssysteme-wichtigkeit-wert" value="keine_antwort">
+            <label for="keine_antwort">Keine Antwort</label>     
+        </fieldset>
+        <label for="verschlüsselte-datenübertragung"> <h4> Verschlüsselte Datenübertragung </h4></label>
+        <fieldset>
+            <input type="radio" name="verschlüsselte-datenübertragung" id="sehr_wunschenswert" value="sehr_wunschenswert">
+            <label for="sehr_wunschenswert">Sehr wünschenswert</label>
+
+            <input type="radio" name="verschlüsselte-datenübertragung" id="wunschenswert" value="wunschenswert">
+            <label for="wunschenswert">Wünschenswert</label>
+
+            <input type="radio" name="verschlüsselte-datenübertragung" id="nicht_wunschenswert" value="nicht_wunschenswert">
+            <label for="nicht_wunschenswert">Nicht wünschenswert</label>
+
+            <input type="radio" name="verschlüsselte-datenübertragung" id="uberhaupt_nicht_wunschenswert" value="uberhaupt_nicht_wunschenswert">
+            <label for="uberhaupt_nicht_wunschenswert">Überhaupt nicht wünschenswert</label>
+
+            <input type="radio" name="verschlüsselte-datenübertragung" id="keine_antwort" value="keine_antwort">
+            <label for="keine_antwort">Keine Antwort</label>
+        </fieldset>
+        
+        <br>
+
+        <h3>
+            3.2 Bitte bewerten Sie das folgende Systemverhalten im Angriffsfall. Wie <br>
+            wünschenswert ist folgendes Verhalten?
+        </h3>
+        
+        <label for="automatischer-ausschluss"><h4>Automatischer Ausschluss von Systemkomponenten bei auffälligem Ereignis</h4></label>
+        <fieldset>
+            <input type="radio" name="automatischer-ausschluss" id="sehr_wunschenswert" value="sehr_wunschenswert">
+            <label for="sehr_wunschenswert">Sehr wünschenswert</label>
+            <input type="radio" name="automatischer-ausschluss" id="wunschenswert" value="wunschenswert">
+            <label for="wunschenswert">Wünschenswert</label>
+            <input type="radio" name="automatischer-ausschluss" id="nicht_wunschenswert" value="nicht_wunschenswert">
+            <label for="nicht_wunschenswert">Nicht wünschenswert</label>
+            <input type="radio" name="automatischer-ausschluss" id="uberhaupt_nicht_wunschenswert" value="uberhaupt_nicht_wunschenswert">
+            <label for="uberhaupt_nicht_wunschenswert">Überhaupt nicht wünschenswert/label>
+            <input type="radio" name="automatischer-ausschluss" id="keine_antwort" value="keine_antwort">
+            <label for="keine_antwort">Keine Antwort</label>
+        </fieldset>
+        <label for="alarmierung-systemadministration"><h4>Alarmierung der Systemadministration bei auffälligem Systemverhalten</h4></label>
+        <fieldset>
+            <input type="radio" name="alarmierung-systemadministration" id="sehr_wunschenswert" value="sehr_wunschenswert">
+            <label for="sehr_wunschenswert">Sehr wünschenswert</label>
+            <input type="radio" name="alarmierung-systemadministration" id="wunschenswert" value="wunschenswert">
+            <label for="wunschenswert">Wünschenswert</label>
+            <input type="radio" name="alarmierung-systemadministration" id="nicht_wunschenswert" value="nicht_wunschenswert">
+            <label for="nicht_wunschenswert">Nicht wünschenswert</label>
+            <input type="radio" name="alarmierung-systemadministration" id="uberhaupt_nicht_wunschenswert" value="uberhaupt_nicht_wunschenswert">
+            <label for="uberhaupt_nicht_wunschenswert">Überhaupt nicht wünschenswert/label>
+            <input type="radio" name="alarmierung-systemadministration" id="keine_antwort" value="keine_antwort">
+            <label for="keine_antwort">Keine Antwort</label>
+        </fieldset>
+        <label for="algorithmen-wechseln"><h4>Wechseln der verwendeten Algorithmen bei erkannten Angriffen</h4></label>
+        <fieldset>
+            <input type="radio" name="algorithmen-wechseln" id="sehr_wunschenswert" value="sehr_wunschenswert">
+            <label for="sehr_wunschenswert">Sehr wünschenswert</label>
+            <input type="radio" name="algorithmen-wechseln" id="wunschenswert" value="wunschenswert">
+            <label for="wunschenswert">Wünschenswert</label>
+            <input type="radio" name="algorithmen-wechseln" id="nicht_wunschenswert" value="nicht_wunschenswert">
+            <label for="nicht_wunschenswert">Nicht wünschenswert</label>
+            <input type="radio" name="algorithmen-wechseln" id="uberhaupt_nicht_wunschenswert" value="uberhaupt_nicht_wunschenswert">
+            <label for="uberhaupt_nicht_wunschenswert">Überhaupt nicht wünschenswert/label>
+            <input type="radio" name="algorithmen-wechseln" id="keine_antwort" value="keine_antwort">
+            <label for="keine_antwort">Keine Antwort</label>    
+        </fieldset>
+        <label for="reines-beobachten"><h4>Reines Beobachten der Systemkomponenten</h4></label>
+        <fieldset>
+            <input type="radio" name="reines-beobachten" id="sehr_wunschenswert" value="sehr_wunschenswert">
+            <label for="sehr_wunschenswert">Sehr wünschenswert</label>
+            <input type="radio" name="reines-beobachten" id="wunschenswert" value="wunschenswert">
+            <label for="wunschenswert">Wünschenswert</label>
+            <input type="radio" name="reines-beobachten" id="nicht_wunschenswert" value="nicht_wunschenswert">
+            <label for="nicht_wunschenswert">Nicht wünschenswert</label>
+            <input type="radio" name="reines-beobachten" id="uberhaupt_nicht_wunschenswert" value="uberhaupt_nicht_wunschenswert">
+            <label for="uberhaupt_nicht_wunschenswert">Überhaupt nicht wünschenswert/label>
+            <input type="radio" name="reines-beobachten" id="keine_antwort" value="keine_antwort">
+            <label for="keine_antwort">Keine Antwort</label>
+        </fieldset>
+        
+        <h3>
+            Dokumentierte IT-Sicherheitsvorfälle besitzen u.a. alltägliche oder <br>
+            hausgemachte Ursachen. Worin bestehen Ihrer Erfahrung nach <br>
+            Bedrohungsrisiken? 
+        </h3>
+        <label for="it-sicherheitsvorfalle"> Bitte gebe hier Deine Antwort ein: </label> <br>
+        <textarea name="it-sicherheitsvorfalle" id="it-sicherheitsvorfalle" cols="100" rows="20"></textarea>
+
+        <h3>
+            Erfahrungsgemäß sind meist schon IT-Sicherheitslösungen anzutreffen. <br>
+            Welche Lösungen finden sich Ihrer Erfahrung nach im Umfeld Kritischer <br>
+            Infrastrukturen wieder?
+        </h3>
+        <label for="it-sicherheitslosungen"> Bitte gebe hier Deine Antwort ein: </label> <br>
+        <textarea name="it-sicherheitslosungen" id="it-sicherheitslosungen" cols="100" rows="20"></textarea>
+
+        <h2>
+            Abschluss
+        </h2>
+        <h3>
+            4.1 Zu welchem Unternehmen gehören Sie?
+        </h3>
+        <label for="unternehmen">Bitte gebe hier Deine Antwort ein:</label> <br>
+        <input type="text" name="unternehmen" id="unternehmen">
+        <br>
+
+        <h3>
+            4.3 Falls Sie Bemerkungen zu dieser Umfrage haben, so können Sie diese hier mitteilen
+        </h3>
+        <label for="bemerkungen">Bitte gebe hier Deine Antwort ein:</label> <br>
+        <textarea name="bemerkungen" id="bemerkungen" cols="100" rows="10"></textarea>
+        
+        <h3>
+            4.4 Falls eine anonymisierte Auswertung dieser Umfrage zugeschickt werden soll, <br>
+            können Sie hier Ihre e-Mail-Adresse hinterlassen.
+        </h3>
+        <label for="email-id">Bitte gebe hier Deine Antwort ein:</label> <br>
+        <input type="email" name="email-id" id="email-id">
+        <br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

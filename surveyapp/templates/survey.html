@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Page</title>
+</head>
+
+<body>
+    <nav> <a href=" {% url 'logout' %} ">Logout</a> </nav>
+    {% if error_message %}
+        <p> 
+            {{error_message}}
+        </p>
+    {% endif %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <ul>
+            <li>
+                <h2>
+                    <label>
+                        Spielen Sie Schach ?
+                    </label>
+                </h2>
+                <fieldset>
+                    <input type="radio" name="chess" id="chess-ja" value="ja">
+                    <label for="chess-yes"> Ja </label> <br>
+                    <input type="radio" name="chess" id="chess-nein" value="nein">
+                    <label for="chess-no"> Nein </label> <br>
+                    <input type="radio" name="chess" id="chess-sonst" value="sonst">
+                    <label for="chess-sonst">Sonst</label> <input type="text" name="hobby" id="hobby"> <br>
+                </fieldset>
+            </li>
+            <li>
+                <h2>
+                    <label for="elo">
+                        Was ist Ihrer Elo-Rating ?
+                    </label>
+                </h2>
+                <input type="number" max="3000" min="100">
+            </li>
+            <li>
+                <h2>
+                    <label>
+                        Spielen Sie täglich Schach ?
+                    </label>
+                </h2>
+
+                <fieldset>
+                    <input type="radio" name="daily" id="daily-yes" value="ja">
+                    <label for="daily-yes"> Ja </label>
+                    <input type="radio" name="daily" id="daily-no" value="nein">
+                    <label for="daily-no"> Nein </label>
+                </fieldset>
+            </li>
+            <li>
+                <h2>
+                    <label>
+                        Nehmen Sie an Turnieren teil ?
+                    </label>
+                </h2>
+                <fieldset>
+                    <input type="radio" name="tournament" id="tournament-yes" value="ja">
+                    <label for="tournament-yes"> Ja </label>
+                    <input type="radio" name="tournament" id="tournament-no" value="nein">
+                    <label for="tournament-no"> Nein </label>
+                </fieldset>
+            </li>
+            <li>
+                <h2>
+                    <label for="problems">
+                        Möchtest du deine Erfahrung mit uns teilen ? <br>
+                        Gab es irgengwelche Probleme bei den Turnieren ? <br>
+                    </label>
+                </h2>
+                <sub>
+                    Wenn nein bitte einfach den Textplatz leer lassen. <br>
+                </sub>
+                <textarea name="problems" id="problems" cols="60" rows="10"></textarea>
+            </li>
+            <li>
+                <h2>
+                    <label>
+                        Bitte bewerten Sie die folgenden Gegenstände nach Ihrer Präferenz, <br>
+                        mit wem Sie in Turnieren spielen möchten.
+                    </label>
+                </h2>
+                {% for item in items %}
+                <label for="{{item.item_name}}"> <b> {{item.item_name}} </b> </label>
+                <br>
+                <fieldset>
+                    <input type="radio" name="{{item.item_name}}" id="sehr-wunschwert" value="sehr-wunschwert">
+                    <label for="sehr-wunschwert">Sehr Wünschwert</label>
+                    <input type="radio" name="{{item.item_name}}" id="wunschwert" value="wunschwert">
+                    <label for="wunschwert">Wünschwert</label>
+                    <input type="radio" name="{{item.item_name}}" id="nicht-wunschwert" value="nicht-wunschwert">
+                    <label for="nicht-wunschwert">Nicht wüsnchwert</label>
+                    <input type="radio" name="{{item.item_name}}" id="uberhaupt-nicht-wunschwert"
+                        value="uberhaupt-nicht-wunschwert">
+                    <label for="uberhaupt-nicht-wunschwert">Überhaupt nicht wüsnchwert</label>
+                    <input type="radio" name="{{item.item_name}}" id="keine-antwort" value="keine-antwort">
+                    <label for="keine-antwort">Keine Antwort</label>
+                </fieldset>
+                <br>
+                {% endfor %}
+            </li>
+            <li>
+                <h2>
+                    Bitte geben Sie Ihre Präferenz für Schachfiguren im Format 'xyz Chess Pieces' an
+                </h2>
+                <input type="text" name="new-item" id="new-item">
+            </li>
+        </ul>
+        <input type="submit" value="Datei Absenden">
+    </form>
+</body>
+
+</html>

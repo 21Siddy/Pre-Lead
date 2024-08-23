@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey - Login</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="username"> Enter Username </label> <br>
+        <input type="text" id="username" name="username"> <br>
+        <label for="password"> Enter Password</label> <br>
+        <input type="password" id="password" name="password"> <br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if error_message %}
+        <div class="error_message"> {{error_message}} </div>
+    {% endif %}
+</body>
+</html>
